@@ -1,197 +1,84 @@
-# 🔄 Loop Agent
+# loop-agent
 
-**Autonomous AI Agent that continuously creates and deploys AI infrastructure projects**
+## Detailed Description
 
-## Overview
+loop-agent is maintained as an industry-grade software project with production-ready engineering practices.  
+This repository includes documented setup, quality gates, operational guidance, and governance standards so contributors can safely build, test, and ship changes with confidence.
 
-Loop Agent is an autonomous agent that runs in a continuous **Plan → Build → Push** loop, creating production-ready AI infrastructure projects and deploying them to GitHub automatically.
+## Problem Statement
 
-## Features
+Describe the user or business problem this project solves, the target users, and expected outcomes.
 
-- 🔄 **Continuous Loop** - Runs indefinitely creating projects
-- 🎯 **10 MVP Projects** - Complete AI infrastructure stack
-- 🚀 **Auto-Deploy** - Pushes to GitHub automatically
-- 📊 **Real-time Dashboards** - Terminal and Web UI monitoring
-- 🛡️ **Safe Mode** - Dry-run testing before live deployment
-- 📈 **Progress Tracking** - Logs and statistics
+## Solution Overview
 
-## Quick Start
+Summarize the architecture, core modules, and runtime behavior at a high level.
 
-### Installation
+## Key Features
+
+- Clear project scope and intended use.
+- Reproducible local development workflow.
+- Test coverage and CI quality gates.
+- Security and contribution policies.
+- Deployment-ready repository structure.
+
+## Repository Structure
+
+```text
+.
+|-- src/                  # Core implementation
+|-- tests/                # Automated test suites
+|-- docs/                 # Design notes and operational docs
+|-- .github/workflows/    # CI pipelines
+|-- README.md
+|-- LICENSE
+|-- CONTRIBUTING.md
+|-- SECURITY.md
+|-- CODE_OF_CONDUCT.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Git
+- Project runtime/toolchain for this repo
+
+### Local Setup
 
 ```bash
-git clone https://github.com/yksanjo/loop-agent.git
-cd loop-agent
-npm install
+npm ci
+npm run lint
+npm test
+npm run build
 ```
 
-### Usage
+## Usage
 
-```bash
-# Test run (dry-run)
-npm run loop -- --dry-run
+Document primary commands, API routes, CLI examples, or UI workflows here.
 
-# Live run (creates actual repos)
-npm run loop -- --live
+## Quality Standards
 
-# View dashboard
-npm run dashboard
+- CI must pass before merge.
+- Changes require tests for critical behavior.
+- Security-sensitive changes should include risk notes.
+- Keep pull requests focused and reviewable.
 
-# Web dashboard
-npm run serve
-```
+## Security
 
-## The Loop
+See `SECURITY.md` for responsible disclosure and handling guidelines.
 
-```
-┌─────────────┐
-│   PLAN      │  Select next MVP project
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   BUILD     │  Create complete project structure
-└──────┬──────┘
-       │
-       ▼
-┌─────────────┐
-│   PUSH      │  Deploy to GitHub
-└──────┬──────┘
-       │
-       ▼
-   (Repeat)
-```
+## Contributing
 
-## 10 MVP Projects
+See `CONTRIBUTING.md` for branching, commit, and pull request expectations.
 
-| # | Project | Language | Description |
-|---|---------|----------|-------------|
-| 1 | agent-waf | TypeScript | Web Application Firewall |
-| 2 | agent-observability | Go | Monitoring & Tracing |
-| 3 | agent-gateway | Rust | API Gateway |
-| 4 | agent-memory-store | Python | Distributed Memory |
-| 5 | agent-orchestrator | TypeScript | Workflow Engine |
-| 6 | agent-registry | Go | Service Discovery |
-| 7 | agent-policy-engine | Rust | Policy Enforcement |
-| 8 | agent-cache | Python | Intelligent Caching |
-| 9 | agent-queue | TypeScript | Message Queue |
-| 10 | agent-config | Go | Configuration Mgmt |
+## Roadmap
 
-## Commands
+Track upcoming milestones, technical debt, and planned feature work.
 
-```bash
-# Run loop
-npm run loop              # Auto-detect auth
-npm run loop -- --live    # Force live mode
-npm run loop -- --dry-run # Test mode
+## Support
 
-# Visualization
-npm run dashboard         # Terminal dashboard
-npm run dashboard -- -w   # Watch mode
-npm run serve             # Web dashboard (port 3456)
-npm run serve -- -p 8080  # Custom port
-
-# Help
-npm run help
-```
-
-## Requirements
-
-- Node.js v18+
-- GitHub CLI (`gh`)
-- Git configured
-
-## Setup
-
-```bash
-# Install dependencies
-npm install
-
-# Authenticate with GitHub
-gh auth login
-
-# Verify
-gh auth status
-```
-
-## Configuration
-
-Edit `loop.js` to customize:
-
-- Project list
-- GitHub organization
-- Batch size
-- Delays
-- Templates
-
-## Dashboard
-
-### Terminal Dashboard
-
-```bash
-npm run dashboard
-```
-
-Shows:
-- Progress bar
-- Project status
-- Success rate
-- Statistics
-
-### Web Dashboard
-
-```bash
-npm run serve
-```
-
-Opens at http://localhost:3456
-
-Features:
-- Real-time updates
-- Project cards
-- Activity log
-- GitHub links
-
-## Logs
-
-- **JSON**: `~/agent-infra-loop-log.json`
-- **Text**: `~/agent-infra-loop.log`
-- **Web**: `logs.json`
-
-## Example Output
-
-```
-══════════════════════════════════════════════════════════
-║  🚀 AI INFRASTRUCTURE LOOP - DASHBOARD                 ║
-║  Target: github.com/yksanjo                            ║
-╠════════════════════════════════════════════════════════╣
-║  OVERALL PROGRESS                                      ║
-║  ████████████████████████████████████████ 100%         ║
-║  Completed: 10/10  |  Success: 10                       ║
-╚════════════════════════════════════════════════════════╝
-```
-
-## Troubleshooting
-
-### Not authenticated
-```bash
-gh auth login
-```
-
-### Port in use
-```bash
-lsof -ti:3456 | xargs kill -9
-```
-
-### Rate limits
-Increase delay between iterations in config.
+Open a GitHub issue for bugs, feature requests, or documentation gaps.
 
 ## License
 
-MIT - Yoshi Kondo
-
-## Links
-
-- **GitHub**: https://github.com/yksanjo/loop-agent
-- **Moltbook**: https://moltbook.com/u/AgentIngra
-- **Agent Infrastructure**: https://github.com/yksanjo/agent-infrastructure
+This project is released under the MIT License.
